@@ -10,7 +10,7 @@ name:                alist
 -- PVP summary:      +-+------- breaking API changes
 --                   | | +----- non-breaking API additions
 --                   | | | +--- code changes with no API change
-version:             0.1.0.2
+version:             0.1.0.3
 
 -- A short (one-line) description of the package.
 synopsis:            lists with O(1) append
@@ -71,5 +71,5 @@ library
 
 source-repository head
   type: git 
-  location: https://github.com/xpika/typingtester
+  location: https://github.com/xpika/alist
 
