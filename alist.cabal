@@ -60,11 +60,16 @@ library
   -- other-extensions:    
   
   -- Other library packages from which modules are imported.
-  build-depends:       base >=4.9 && <4.10
+  build-depends:       base <10000
   
   -- Directories containing source files.
   -- hs-source-dirs:      
   
   -- Base language which the package is written in.
   default-language:    Haskell98
-  
+
+
+source-repository head
+  type: git 
+  location: https://github.com/xpika/typingtester
+
