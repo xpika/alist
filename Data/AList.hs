@@ -12,6 +12,7 @@ append a AListEmpty = a
 
 instance Monoid (AList a) where 
  mempty = AListEmpty
+ mappend = append
 
 instance Semigroup (AList a) where
  (<>) = append

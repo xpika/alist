@@ -67,6 +67,7 @@ library
   
   -- Base language which the package is written in.
   default-language:    Haskell98
+  default-extensions: Safe
 
 
 source-repository head
