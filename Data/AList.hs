@@ -17,10 +17,14 @@ fold f base AListEmpty = base
 
 sum = fold (+) 0
 
+drawAList x = '[' : drawAList' x ++ "]"
+drawAList' AListEmpty = ""
+drawAList' (AListAppend a b) = drawAList' a ++ "," ++ drawAList' b
+drawAList' (AListTip a) = show a 
+
 instance Monoid (AList a) where
  mempty = AListEmpty
  mappend = append
 
 instance Semigroup (AList a) where
  (<>) = append
-  
