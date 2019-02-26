@@ -11,9 +11,13 @@ data AList a = AListTip a
 singleton x = AListTip x
 append = AListAppend 
 
+{-# INLINABLE fold #-}
 fold f base (AListAppend a b) = f (fold f base a) (fold f base b)
 fold f base (AListTip x) = x
 fold f base AListEmpty = base
+
+cons x alist = singleton x `append` alist 
+snoc alist x = alist `append` singleton x
 
 sum = fold (+) 0
 

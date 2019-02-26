@@ -1,6 +1,9 @@
 import Data.AList
 import Data.DList
 
-eg = AListAppend (AListTip 1) (AListAppend (AListTip 10) (AListTip 100))
+eg = Data.AList.singleton 2
 
-sumEg = Data.AList.sum $ eg
+applyNTimes _ 0 = id
+applyNTimes f x = applyNTimes f (x-1)
+
+--sumEg = Data.AList.sum $ applyNTimes (\x ->  eg `append` eg `append`) 
