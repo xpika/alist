@@ -19,7 +19,7 @@ synopsis:            lists with O(1) append
 -- description:         
 
 -- URL for the project homepage or repository.
-homepage:            xy30.com
+homepage:            http://xy30.com
 
 -- The license under which the package is released.
 license:             BSD3
