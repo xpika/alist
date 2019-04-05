@@ -51,7 +51,8 @@ cabal-version:       >=1.10
 
 library
   -- Modules exported by the library.
-  exposed-modules: Data.AList
+  exposed-modules: Data.AList  
+                  ,Data.AList.NonEmpty
   
   -- Modules included in this library but not exported.
   -- other-modules:       
