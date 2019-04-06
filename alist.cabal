@@ -10,7 +10,7 @@ name:                alist
 -- PVP summary:      +-+------- breaking API changes
 --                   | | +----- non-breaking API additions
 --                   | | | +--- code changes with no API change
-version:             0.1.0.4
+version:             0.1.1.6
 
 -- A short (one-line) description of the package.
 synopsis:            lists with O(1) append
@@ -19,7 +19,7 @@ synopsis:            lists with O(1) append
 -- description:         
 
 -- URL for the project homepage or repository.
-homepage:            xy30.com
+homepage:            http://xy30.com
 
 -- The license under which the package is released.
 license:             BSD3
@@ -51,7 +51,8 @@ cabal-version:       >=1.10
 
 library
   -- Modules exported by the library.
-  exposed-modules: Data.AList
+  exposed-modules: Data.AList  
+                  ,Data.AList.NonEmpty
   
   -- Modules included in this library but not exported.
   -- other-modules:       
@@ -60,13 +61,14 @@ library
   -- other-extensions:    
   
   -- Other library packages from which modules are imported.
-  build-depends:       base <10000
+  build-depends:       base >= 4.9 && < 5
   
   -- Directories containing source files.
   -- hs-source-dirs:      
   
   -- Base language which the package is written in.
   default-language:    Haskell98
+  default-extensions: Safe
 
 
 source-repository head
