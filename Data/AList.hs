@@ -11,15 +11,13 @@ data AList a = AListTip a
 singleton x = AListTip x
 append = AListAppend 
 
-{-# INLINABLE fold #-}
-fold f base (AListAppend a b) = f (fold f base a) (fold f base b)
-fold f base (AListTip x) = x
-fold f base AListEmpty = base
+instance Foldable AList where
+   foldMap f AListEmpty = mempty
+   foldMap f (AListTip a) = f a
+   foldMap f (AListAppend a b) = foldMap f a `mappend` foldMap f b
 
 cons x alist = singleton x `append` alist 
 snoc alist x = alist `append` singleton x
-
-sum = fold (+) 0
 
 drawAList x = '[' : drawAList' x ++ "]"
 drawAList' AListEmpty = ""
