@@ -10,7 +10,7 @@ name:                alist
 -- PVP summary:      +-+------- breaking API changes
 --                   | | +----- non-breaking API additions
 --                   | | | +--- code changes with no API change
-version:             0.1.1.6
+version:             0.1.2.7
 
 -- A short (one-line) description of the package.
 synopsis:            lists with O(1) append

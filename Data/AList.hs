@@ -2,6 +2,7 @@ module Data.AList where
 import Prelude hiding (sum)
 import Data.Monoid
 import Data.Semigroup
+import Data.Foldable
 
 data AList a = AListTip a
              | AListAppend (AList a) (AList a)
@@ -10,6 +11,12 @@ data AList a = AListTip a
 
 singleton x = AListTip x
 append = AListAppend 
+
+instance Eq a => Eq (AList a) where
+  alist == alist' = toList alist == toList alist'
+
+instance Ord a => Ord (AList a) where
+  compare alist alist' = compare (toList alist) (toList alist')
 
 instance Foldable AList where
    foldMap f AListEmpty = mempty
@@ -28,5 +35,6 @@ instance Monoid (AList a) where
  mempty = AListEmpty
  mappend = append
 
+-- this doesn't technically associate
 instance Semigroup (AList a) where
  (<>) = append
